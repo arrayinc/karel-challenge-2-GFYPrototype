@@ -6,3 +6,24 @@ moving Karel backward one square but leaves it facing in the same direction.
 If Karel’s back is against a wall, the backup function should fail when Karel tries
 to execute the move instruction that is part of the implementation.
 */
+
+import "turns";
+
+function forward() {
+	repeat (3) {
+		move();
+	}
+}
+
+function backup() {
+	repeat (3) {
+		turnAround();
+		move();
+		turnAround();
+	}
+}
+
+function Solve() {
+	forward();
+	backup();
+}
